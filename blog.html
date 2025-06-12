@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Blog</title>
+  <link rel="stylesheet" href="styles/blogs.css">
+</head>
+<body>
+
+  <div class="header">
+    <h1>Blogs</h1>
+  </div>
+
+  <div class="blog-container">
+    <div class="blog-card" onclick="openArticle('articles/article1.html')">
+      <img src="assets/sdlc-software-development-life-cycle.webp" alt="Blog Thumbnail">
+      <div class="blog-content">
+        <h3>My Approach to Software Development</h3>
+        <p>A concise, professional overview of a pragmatic and user-focused approach to modern software development.</p>
+        <a href="articles/article1.html" class="read-more">Read more</a>
+      </div>
+    </div>
+
+     
+
+  </div>
+
+  <script>
+    function openArticle(url) {
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>

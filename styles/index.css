@@ -1,0 +1,301 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Ensure html and body take full viewport height */
+    overflow: hidden; /* Hide overflow to prevent document scrolling */
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex; /* Use flexbox for overall layout */
+    flex-direction: column; /* Stack header, main, and footer vertically */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Condensed', sans-serif;
+}
+
+/* Header and Navigation */
+.nav-menu-ul {
+    background-color: #011124;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    min-height: 60px; /* Adjusted height for navigation */
+    padding: 10px 0; /* Add vertical padding */
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem; /* Reduced gap */
+    flex-wrap: wrap; /* Allow nav items to wrap */
+}
+
+.nav-menu-ul li a {
+    font-weight: 500;
+    display: inline-block;
+    padding: 0.5rem 1rem; /* Reduced padding */
+    background-color: #011124;
+    color: white;
+    border-radius: 6px; /* Slightly smaller border-radius */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem; /* Slightly smaller font size */
+}
+
+.nav-menu-ul li a:hover {
+    background-color: #011a36;
+    border-color: #004a99;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Main Content Container */
+.Container {
+    flex-grow: 1; /* Allow the container to take up remaining vertical space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically within the container */
+    padding: 1rem; /* Reduced overall padding */
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-y: auto; /* Allow scrolling within the main content if it exceeds height */
+}
+
+/* Main Text Section */
+.MainText {
+    text-align: center;
+    margin-bottom: 1rem; /* Reduced margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+}
+
+.MainTextTop {
+    display: flex;
+    align-items: center;
+    gap: 1em; /* Reduced gap */
+    margin-bottom: 15px; /* Reduced margin */
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+    justify-content: center; /* Center items if they wrap */
+}
+
+.profile-pic {
+    width: 70px; /* Slightly smaller profile picture */
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.MainTextTop h2 {
+    font-size: 1.8em; /* Adjusted font size */
+    margin-bottom: 0.1em;
+}
+
+.MainTextTop h3 {
+    font-size: 1.1em; /* Adjusted font size */
+    margin-top: 0.1em;
+    margin-bottom: 0;
+}
+
+.MainTextMiddle p {
+    font-size: 1rem; /* Slightly smaller font size for paragraphs */
+    margin-bottom: 0.8em; /* Reduced bottom margin between paragraphs */
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* This is the key change to center the buttons */
+    gap: 1rem; /* Reduced gap */
+    margin-top: 1rem; 
+    margin-left: 4rem;
+    flex-wrap: wrap;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white; /* Ensure text color is white for all buttons */
+    padding: 0.5rem 1rem; /* Original padding */
+    border-radius: 8px; /* Original border-radius */
+    border: 1px solid whitesmoke; /* Original border style and color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.1rem; /* Original font size for prominence */
+}
+
+.social-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.social-icon {
+    width: 20px; /* Original icon size */
+    height: 20px;
+}
+
+.linkedin-button {
+    background-color: #0077b5; /* LinkedIn blue */
+}
+
+.linkedin-button:hover {
+    background-color: #005f8d; /* Darker LinkedIn blue on hover */
+}
+
+.github-button {
+    background-color: #333; /* GitHub dark grey */
+}
+
+.github-button:hover {
+    background-color: #24292e; /* Darker GitHub grey on hover */
+}
+
+.discord-button{
+    background-color: #011a36;
+}
+
+/* alertbox CSS */
+#confirmBtn{
+    padding: 10px 20px;
+    background-color:#007bff ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+.alert-box{
+    display:none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.06);
+    justify-content: center;
+    align-items: center;
+    
+}
+.alert-content{
+    background-color: #ffffff;
+    padding: 20PX;
+    border-radius:  8PX;
+    width: 300PX;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert-content h2{
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+
+}
+
+.alert-content p{
+    font-size:16px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.alert-content button{
+    padding: 10px 20px;
+    background-color: #28a745;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor: pointer;
+
+}
+
+.alert-content button:hover{
+    background-color: #218838;
+}
+
+
+
+/* Main Image Section */
+.MainImage {
+    margin-top: 1rem; /* Reduced margin */
+    text-align: center;
+}
+
+.Image {
+    max-width: 100%; /* Ensure image scales down well */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 280px; /* Limit image height to save space */
+    object-fit: cover; /* Ensure the entire image is visible */
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.MainImage p {
+    margin-top: 0.5rem; /* Reduced margin */
+    font-size: 0.9em; /* Smaller font size for image caption */
+}
+
+/* Footer */
+footer {
+    min-height: 40px; /* Adjusted height for footer */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 8px; /* Reduced padding */
+    z-index: 1000;
+}
+
+footer p {
+    font-size: 0.9em; /* Smaller font size for footer text */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .Container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; /* Vertically align items in the middle for desktop */
+        padding: 2rem; /* Restore some padding for larger screens */
+    }
+
+    .MainText {
+        text-align: left;
+        padding-right: 2rem;
+        align-items: flex-start;
+        max-width: 60%; /* Allocate more width to text on larger screens */
+    }
+
+    .MainImage {
+        text-align: right;
+        flex-shrink: 0; /* Prevent image from shrinking too much */
+        width: 35%; /* Allocate specific width for image on larger screens */
+    }
+
+    .Image {
+        max-height: 350px; /* Allow image to be taller on larger screens */
+    }
+
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+
+    .MainTextTop {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+}
