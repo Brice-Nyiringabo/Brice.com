@@ -1,0 +1,1 @@
+A responsive personal portfolio website built using HTML, CSS, and JavaScript. This site showcases my skills, resume, and blog, and includes an interactive contact form powered by EmailJS. Designed to introduce who I am as an aspiring full-stack developer and make it easy for others to connect with me.
