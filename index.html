@@ -1,126 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="x-UA-Compatibility" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Brice Nyiringabo</title>
-    <link rel="stylesheet" href="styles/index.css">   
-
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Brice Nyiringabo</title>
+  <link rel="stylesheet" href="styles\index.css" /> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-
-
-
 
 <body>
 
-    <header>
-        <nav class="nav-menu">
-            <ul class="nav-menu-ul">
-                <li><a href="#">Home</a></li> 
-                <!-- <li><a href="Services.html" target="_blank">About Me</a></li> -->
-                <li><a href="skills.html" target="_blank">Skills</a></li> 
-                <!-- <li><a href="Projects.html" target="_blank">MyProjects</a></li>  -->
-                <li><a href="Resume.html" target="_blank">Resume</a></li>
-                <li><a href="blog.html" target="_blank">Blogs</a></li>
-                <li><a href="ContactMe.html" target="_blank">Contact Me</a></li>    
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav class="nav-menu">
+      <!-- Mobile Header -->
+      <div class="nav-mobile-header">
+        <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a>
+        <button id="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></button>
+      </div>
 
+      <!-- Navigation Links -->
+      <ul class="nav-menu-ul" id="nav-links">
+        <li><a href="skills.html" target="_blank">Skills</a></li>
+        <li><a href="Resume.html" target="_blank">Resume</a></li>
+        <li><a href="blog.html" target="_blank">Blogs</a></li>
+        <li><a href="ContactMe.html" target="_blank">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class = "Container">
-
-
-        <div class="MainText">
-            <div class ="MainTextTop">
-                <img src="assets/profile pic.jpg" alt="Brice Nyiringabo" class="profile-pic">
-                <div>
-                    <h2> Brice Nyiringabo</h2>
-                    <h3> Software Engineer</h3>
-                </div>
-                
-            </div>
-            
-
-            <div class="MainTextMiddle">
-                <p class = "text">Whether you're a company, recruiter, or individual seeking passionate tech talent, I’m eager to contribute and grow. As a student aspiring to become a software developer, I’m actively looking for internship opportunities where I can apply and expand my skills in software development, web technologies, and database management.</p>
-                <p class = "text">Driven by curiosity and a strong work ethic, I love turning ideas into working solutions—whether that’s building applications, writing clean and efficient code, or designing and optimizing databases. I’m excited to learn from real-world experience and collaborate with teams on meaningful projects.  </p>
-                <p class = "text">Let’s connect and explore how I can be a valuable part of your next project or internship program!</p>
-            </div>
-
-
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/brice-nyiringabo/" target="_blank" class="social-button linkedin-button">
-                    <img src="assets/icons8-linkedin-48.png" alt="LinkedIn" class="social-icon"> LinkedIn
-                </a>
-                <a href="https://github.com/Brice-Nyiringabo" target="_blank" class="social-button github-button">
-                    <img src="assets/icons8-github-30.png" alt="GitHub" class="social-icon"> GitHub
-                </a>
-                <button  id="showAlert" class="social-button discord-button">
-                    <img src="assets/discord.jpeg" alt="Discord" class="social-icon"> Discord
-                </button>
-            </div>
-
-            <div id="customAlert" class="alert-box">
-                <div class="alert-content">
-                    <h2>Discord</h2>
-                    <p>My username is 'brice_nyiringabo'</p>
-                    <button id="confirmBtn">Ok</button>
-                </div>
-            </div>
-
-            <script>
-                const showAlertBtn = document.getElementById('showAlert');
-                const customAlert = document.getElementById('customAlert');
-                const confirmBtn = document.getElementById('confirmBtn');
-
-                showAlertBtn.addEventListener('click', function(){
-                    customAlert.style.display = 'flex';
-
-                });
-
-                confirmBtn.addEventListener('click', function(){
-                    customAlert.style.display = 'none';
-
-                });
-
-            </script>
-
-         
-                        
-
+  <main class="Container">
+    <div class="MainText">
+      <div class="MainTextTop">
+        <img src="assets/profile pic.jpg" alt="Brice Nyiringabo" class="profile-pic" />
+        <div>
+          <h2>Brice Nyiringabo</h2>
+          <h3>Software Engineer</h3>
         </div>
+      </div>
 
-        <div class="MainImage">
-            <img src="assets/mineapolis city.webp" alt="Brice Nyiringabo" width="281" height = "400" class="Image"> 
-            <p> <i><cite>Open to relocation | Based in Minnesota</cite></i></p> 
+      <div class="MainTextMiddle">
+        <p class="text">Whether you're a company, recruiter, or individual seeking passionate tech talent, I’m eager to contribute and grow.</p>
+        <p class="text">As a student aspiring to become a software developer, I’m actively looking for internship opportunities where I can apply and expand my skills.</p>
+        <p class="text">Let’s connect and explore how I can be a valuable part of your next project or internship program!</p>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/brice-nyiringabo/" target="_blank" class="social-button linkedin-button">
+          <img src="assets/icons8-linkedin-48.png" alt="LinkedIn" class="social-icon" />
+        </a>
+        <a href="https://github.com/Brice-Nyiringabo" target="_blank" class="social-button github-button">
+          <img src="assets/icons8-github-30.png" alt="GitHub" class="social-icon" />
+        </a>
+        <button id="showAlert" class="social-button discord-button">
+          <img src="assets/discord.jpeg" alt="Discord" class="social-icon" />
+        </button>
+      </div>
+
+      <div id="customAlert" class="alert-box">
+        <div class="alert-content">
+          <h2>Discord</h2>
+          <p>username:'brice_nyiringabo'</p>
+          <button id="confirmBtn">Ok</button>
         </div>
-
-
-        
-        
-        
-    
-
+      </div>
     </div>
 
-    <footer>
-        <p>&copy; <span id="current-year"></span> Brice Nyiringabo | <b>Function Rules Design</b></p>
-    
-    </footer>
+    <div class="MainImage">
+      <img src="assets/mineapolis city.webp" alt="Minneapolis" class="Image" />
+      <p><i><cite>Open to relocation | Based in Minnesota</cite></i></p>
+    </div>
+  </main>
 
-    <script>
-       
-        const currentYear = new Date().getFullYear();
-        document.getElementById('current-year').textContent = currentYear;
-    </script>
-    
+  <footer>
+    <p>&copy; <span id="current-year"></span> Brice Nyiringabo | <b>Function Rules Design</b></p>
+  </footer>
 
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 
-  
+    document.getElementById('showAlert').addEventListener('click', () => {
+      document.getElementById('customAlert').style.display = 'flex';
+    });
 
+    document.getElementById('confirmBtn').addEventListener('click', () => {
+      document.getElementById('customAlert').style.display = 'none';
+    });
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 
 </body>
-
 </html>
+
+

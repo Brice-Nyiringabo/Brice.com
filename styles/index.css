@@ -1,301 +1,286 @@
-/* Reset and Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%; /* Ensure html and body take full viewport height */
-    overflow: hidden; /* Hide overflow to prevent document scrolling */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Helvetica Neue', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-    display: flex; /* Use flexbox for overall layout */
-    flex-direction: column; /* Stack header, main, and footer vertically */
+  display: flex;
+  flex-direction: column; /* This is crucial for stacking vertically */
+  min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+  background-color: #f9f9f9;
+  color: #333;
+  
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    font-family: 'Condensed', sans-serif;
+/* NAVIGATION */
+.nav-menu {
+  width: 100%; 
+  background-color: #011124;
 }
 
-/* Header and Navigation */
+/* Navigation links container (hidden by default on mobile) */
 .nav-menu-ul {
-    background-color: #011124;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  transition: all 0.3s ease; /* Smooth transition */
+
+  background-color: #011124;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    min-height: 60px; /* Adjusted height for navigation */
-    padding: 10px 0; /* Add vertical padding */
+    min-height: 60px; 
+    padding: 10px 0; 
     width: 100%;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
     list-style: none;
-    gap: 1rem; /* Reduced gap */
-    flex-wrap: wrap; /* Allow nav items to wrap */
+    gap: 1rem; 
+    flex-wrap: wrap; 
 }
 
+/* Navigation links */
 .nav-menu-ul li a {
-    font-weight: 500;
-    display: inline-block;
-    padding: 0.5rem 1rem; /* Reduced padding */
-    background-color: #011124;
-    color: white;
-    border-radius: 6px; /* Slightly smaller border-radius */
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-size: 0.95rem; /* Slightly smaller font size */
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: 0.3s ease;
+  text-decoration: none; 
 }
 
 .nav-menu-ul li a:hover {
-    background-color: #011a36;
-    border-color: #004a99;
-    color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: #011a36;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Main Content Container */
+/* Hide navigation on mobile by default */
+.nav-menu-ul.active {
+  display: flex;
+  flex-direction: column; 
+  background-color: #011124;
+  gap: 0; 
+  padding: 1rem 0;
+  margin-top: 1rem; 
+}
+
+/* When the menu is active, remove the border lines between options */
+.nav-menu-ul li a {
+  border-top: none;
+  border-bottom: none;
+}
+
+/* MOBILE HEADER ICONS */
+.nav-mobile-header {
+  display: none;
+}
+
 .Container {
-    flex-grow: 1; /* Allow the container to take up remaining vertical space */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Center content vertically within the container */
-    padding: 1rem; /* Reduced overall padding */
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow-y: auto; /* Allow scrolling within the main content if it exceeds height */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  width: 100%; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  flex-grow: 1; 
 }
 
-/* Main Text Section */
+
 .MainText {
-    text-align: center;
-    margin-bottom: 1rem; /* Reduced margin */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 900px;
+  max-width: 60%;
 }
 
 .MainTextTop {
-    display: flex;
-    align-items: center;
-    gap: 1em; /* Reduced gap */
-    margin-bottom: 15px; /* Reduced margin */
-    flex-wrap: wrap; /* Allow wrapping for small screens */
-    justify-content: center; /* Center items if they wrap */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .profile-pic {
-    width: 70px; /* Slightly smaller profile picture */
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.MainTextTop h2 {
-    font-size: 1.8em; /* Adjusted font size */
-    margin-bottom: 0.1em;
+.MainTextMiddle .text {
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
-.MainTextTop h3 {
-    font-size: 1.1em; /* Adjusted font size */
-    margin-top: 0.1em;
-    margin-bottom: 0;
-}
 
-.MainTextMiddle p {
-    font-size: 1rem; /* Slightly smaller font size for paragraphs */
-    margin-bottom: 0.8em; /* Reduced bottom margin between paragraphs */
-}
-
-/* Social Links */
+/* SOCIAL LINKS */
 .social-links {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* This is the key change to center the buttons */
-    gap: 1rem; /* Reduced gap */
-    margin-top: 1rem; 
-    margin-left: 4rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: white; /* Ensure text color is white for all buttons */
-    padding: 0.5rem 1rem; /* Original padding */
-    border-radius: 8px; /* Original border-radius */
-    border: 1px solid whitesmoke; /* Original border style and color */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-size: 1.1rem; /* Original font size for prominence */
-}
-
-.social-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-.social-icon {
-    width: 20px; /* Original icon size */
-    height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .linkedin-button {
-    background-color: #0077b5; /* LinkedIn blue */
-}
-
-.linkedin-button:hover {
-    background-color: #005f8d; /* Darker LinkedIn blue on hover */
+  background-color: #0077b5;
 }
 
 .github-button {
-    background-color: #333; /* GitHub dark grey */
+  background-color: #333;
 }
 
-.github-button:hover {
-    background-color: #24292e; /* Darker GitHub grey on hover */
+.discord-button {
+  background-color: #5865F2;
 }
 
-.discord-button{
-    background-color: #011a36;
+.social-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
 }
 
-/* alertbox CSS */
-#confirmBtn{
-    padding: 10px 20px;
-    background-color:#007bff ;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-
-}
-.alert-box{
-    display:none;
-    position: fixed;
-    top:0;
-    left:0;
-    width: 100%;
-    height:100%;
-    background-color: rgba(0, 0, 0, 0.06);
-    justify-content: center;
-    align-items: center;
-    
-}
-.alert-content{
-    background-color: #ffffff;
-    padding: 20PX;
-    border-radius:  8PX;
-    width: 300PX;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.social-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
-.alert-content h2{
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #333;
-
-}
-
-.alert-content p{
-    font-size:16px;
-    margin-bottom: 20px;
-    color: #666;
-}
-
-.alert-content button{
-    padding: 10px 20px;
-    background-color: #28a745;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor: pointer;
-
-}
-
-.alert-content button:hover{
-    background-color: #218838;
-}
-
-
-
-/* Main Image Section */
+/* IMAGE */
 .MainImage {
-    margin-top: 1rem; /* Reduced margin */
-    text-align: center;
+  max-width: 35%;
+  text-align: center;
 }
 
 .Image {
-    max-width: 100%; /* Ensure image scales down well */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 280px; /* Limit image height to save space */
-    object-fit: cover; /* Ensure the entire image is visible */
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  max-height: 350px;
 }
 
-.MainImage p {
-    margin-top: 0.5rem; /* Reduced margin */
-    font-size: 0.9em; /* Smaller font size for image caption */
-}
-
-/* Footer */
+/* FOOTER */
 footer {
-    min-height: 40px; /* Adjusted height for footer */
-    background-color: #333;
+  width: 100%; 
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+  margin-top: auto; /* key to push the footer to the bottom */
+}
+
+/* ALERT BOX */
+.alert-box {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.alert-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert-content button {
+  padding: 10px 20px;
+  background-color: #21a841;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  body {
+    /* Keep flex-direction: column here for mobile as well, if it was overridden */
+    flex-direction: column;
+    background-color: #1f242d;
+    color: #f9f9f9;
+    
+  }
+
+  /* Show mobile menu icon */
+  .nav-mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #011124;
+  }
+
+  .home-icon, .menu-icon {
+    font-size: 1.5rem;
     color: white;
+    background: none;
+    border: none;
+  }
+
+  /* Ensure active state toggles the menu on mobile */
+  .nav-menu-ul.active {
+    display: flex;
+  }
+
+  .nav-menu-ul {
+    display: none;
+    flex-direction: column; 
+    background-color: #011124;
+    gap: 0; 
+    padding: 1rem 0;
+    margin-top: 1rem; 
+  }
+
+  /* When the menu is active, remove the border lines between options */
+  .nav-menu-ul li a {
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .Container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    max-width: 100%; 
+    margin: 0; 
+  }
+
+  .MainText, .MainImage {
+    max-width: 100%;
     text-align: center;
-    padding: 8px; /* Reduced padding */
-    z-index: 1000;
-}
+  }
 
-footer p {
-    font-size: 0.9em; /* Smaller font size for footer text */
-}
+  .MainTextTop {
+    justify-content: center;
+    flex-direction: column;
+  }
 
-/* Media Queries for Responsiveness */
-@media (min-width: 768px) {
-    .Container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center; /* Vertically align items in the middle for desktop */
-        padding: 2rem; /* Restore some padding for larger screens */
-    }
-
-    .MainText {
-        text-align: left;
-        padding-right: 2rem;
-        align-items: flex-start;
-        max-width: 60%; /* Allocate more width to text on larger screens */
-    }
-
-    .MainImage {
-        text-align: right;
-        flex-shrink: 0; /* Prevent image from shrinking too much */
-        width: 35%; /* Allocate specific width for image on larger screens */
-    }
-
-    .Image {
-        max-height: 350px; /* Allow image to be taller on larger screens */
-    }
-
-    .profile-pic {
-        width: 80px;
-        height: 80px;
-    }
-
-    .MainTextTop {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-    }
+  .MainImage {
+    margin-top: 1.5rem;
+  }
 }
